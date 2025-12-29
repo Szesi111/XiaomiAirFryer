@@ -23,6 +23,7 @@ from .const import (
     MODEL_FRYER_534,
     MODEL_FRYER_V3,
     MODEL_FRYER_MAF14,
+    MODEL_FRYER_MAF07D,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -223,6 +224,30 @@ MIOT_MAPPING = {
     },
     # https://miot-spec.org/miot-spec-v2/instance?type=urn:miot-spec-v2:device:air-fryer:0000A0A4:xiaomi-maf14:1
     MODEL_FRYER_MAF14: {
+        "status": {"siid": 2, "piid": 1},  # read, notify
+        "device_fault": {"siid": 2, "piid": 2},  # read, notify
+        "target_time": {"siid": 2, "piid": 3},  # read, notify, write
+        "target_temperature": {"siid": 2, "piid": 4},  # read, notify, write
+        "mode": {"siid": 2, "piid": 5},  # read, notify, write
+        "left_time": {"siid": 2, "piid": 6},  # read, notify
+        "taret_cooking_measure": {"siid": 2, "piid": 7},  # read, notify, write
+        "recipe_id": {"siid": 2, "piid": 8},  # read, notify, write
+        "recipe_sync": {"siid": 2, "piid": 9},  # read, notify, write
+        "recipe_name": {"siid": 2, "piid": 10},  # read, notify, write
+        "turn_pot_config": {"siid": 2, "piid": 11},  # read, notify, write
+        "turn_pot": {"siid": 2, "piid": 12},  # read, notify
+        "current_keep_warm": {"siid": 2, "piid": 13},  # read, notify, write
+        "auto_keep_warm": {"siid": 2, "piid": 14},  # read, notify, write
+        "reservation_left_time": {"siid": 2, "piid": 15},  # read, notify, write
+        "cooking_weight": {"siid": 2, "piid": 16},  # read, notify, write
+        "start_cook": {"siid": 2, "aiid": 1},
+        "cancel_cooking": {"siid": 2, "aiid": 2},
+        "pause": {"siid": 2, "aiid": 3},
+        "resume_cook": {"siid": 2, "aiid": 4},
+        "start_recipe_cook": {"siid": 2, "aiid": 5}
+    },
+    # https://miot-spec.org/miot-spec-v2/instance?type=urn:miot-spec-v2:device:air-fryer:0000A0A4:xiaomi-maf07d:1
+    MODEL_FRYER_MAF07D: {
         "status": {"siid": 2, "piid": 1},  # read, notify
         "device_fault": {"siid": 2, "piid": 2},  # read, notify
         "target_time": {"siid": 2, "piid": 3},  # read, notify, write
